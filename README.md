@@ -1,53 +1,95 @@
-# Getting Started with Create React App
+# Robot Task Scheduler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application for managing robot tasks with CRUD operations. Built with React, Redux Toolkit, and Material-UI.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Task Management**: Create, read, update, and delete tasks assigned to robots.
+- **Robot Management**: Manage robots with basic information.
+- **Responsive UI**: Built with Material-UI for a clean, responsive interface.
+- **State Management**: Uses Redux Toolkit for predictable state management.
+- **Mocked API**: Simulates API endpoints for tasks and robots.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React 18
+- Redux Toolkit
+- Material-UI
+- TypeScript (for type safety in slices)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository or navigate to the project directory.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the Application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start the development server:
+   ```
+   npm start
+   ```
+2. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### `npm run eject`
+### Running Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm test
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `src/store/`: Redux store configuration
+- `src/features/`: Redux slices for tasks and robots
+- `src/components/`: React components for UI
+- `src/App.js`: Main app component with tabs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Specification (Mocked)
 
-## Learn More
+### Tasks Endpoints
+- `GET /tasks`: Retrieve all tasks
+- `POST /tasks`: Create a new task
+- `PUT /tasks/{id}`: Update a task
+- `DELETE /tasks/{id}`: Delete a task
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Robots Endpoints
+- `GET /robots`: Retrieve all robots
+- `POST /robots`: Create a new robot
+- `PUT /robots/{id}`: Update a robot
+- `DELETE /robots/{id}`: Delete a robot
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Implementation Plan
 
-### Code Splitting
+1. Set up React project with Redux Toolkit and Material-UI.
+2. Create Redux slices for tasks and robots with mock data.
+3. Implement TaskManager component with table and CRUD forms.
+4. Implement RobotManager component similarly.
+5. Add tabs in App.js for navigation.
+6. Write unit tests for reducers.
+7. Ensure responsive design and clean UI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Assumptions and Clarifications
+
+- No real backend; all data is mocked in Redux state.
+- Tasks can be assigned to any robot; no validation for robot existence.
+- Priority is a number; higher number means lower priority.
+- Status options: Pending, In Progress, Completed.
+
+## Future Improvements
+
+- Add real API integration.
+- Implement advanced filtering and sorting.
+- Add notifications for task status changes.
+- Improve error handling and validation.
 
 ### Analyzing the Bundle Size
 
